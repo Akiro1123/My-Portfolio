@@ -1,0 +1,418 @@
+/* ================= GENERAL ================= */
+
+body{
+background-color:#000000;
+color:#fafafa;
+font-family:'Montserrat',sans-serif;
+margin:0;
+padding:0;
+}
+
+.container{
+width:min(1100px,90%);
+margin:auto;
+padding:20px;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+padding:40px 20px;
+text-align:center;
+position:relative;
+}
+
+.header-title{
+font-size:4rem;
+font-weight:700;
+letter-spacing:2px;
+}
+
+.header-description{
+color:#9a9a9a;
+margin-top:10px;
+}
+
+/* ================= MENU BUTTON ================= */
+
+.menu-button{
+position:absolute;
+top:20px;
+right:20px;
+background:none;
+border:none;
+cursor:pointer;
+}
+
+.menu-icon{
+width:28px;
+transition:0.3s;
+}
+
+.menu-icon:hover{
+transform:scale(1.1);
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar-hidden{
+position:fixed;
+top:0;
+right:0;
+transform:translateX(100%);
+transition:0.3s;
+}
+
+.sidebar-visible{
+position:fixed;
+top:0;
+right:0;
+width:250px;
+height:100%;
+background:#121212;
+padding-top:80px;
+transform:translateX(0);
+transition:0.4s;
+}
+
+#sidebar ul{
+list-style:none;
+padding:0;
+}
+
+#sidebar ul li{
+padding:20px;
+}
+
+#sidebar ul li a{
+color:#fafafa;
+text-decoration:none;
+font-size:18px;
+transition:0.3s;
+}
+
+#sidebar ul li a:hover{
+color:#9a9a9a;
+}
+
+/* ================= HERO ================= */
+
+.hero-section{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:80px 10%;
+gap:40px;
+}
+
+.welcome-text{
+font-size:48px;
+font-weight:700;
+}
+
+.hand-image{
+display:block;
+margin:auto;
+max-width:550px;
+}
+
+A
+
+/* ================= ABOUT ================= */
+
+.about-section{
+padding:100px 10%;
+}
+
+.about-container{
+display:flex;
+align-items:center;
+gap:60px;
+}
+
+.about-image img{
+width:230px;
+height:230px;
+object-fit:cover;
+border-radius:15px;
+border:2px solid #fafafa;
+box-shadow:0 0 25px rgba(255,255,255,0.05);
+}
+
+.about-content{
+max-width:650px;
+}
+
+.about-title{
+font-size:60px;
+margin-bottom:25px;
+}
+
+.about-text{
+font-size:18px;
+line-height:1.8;
+color:#bfbfbf;
+margin-bottom:20px;
+}
+
+/* ================= PROJECTS ================= */
+
+.projects-section{
+padding:100px 10%;
+}
+
+.projects-title{
+font-size:60px;
+margin-bottom:60px;
+}
+
+.projects-container{
+display:flex;
+gap:40px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+/* PROJECT CARD */
+
+.project-card{
+flex:1;
+min-width:320px;
+max-width:480px;
+background:#121212;
+border:1px solid #1f1f1f;
+border-radius:16px;
+padding:25px;
+transition:0.3s;
+box-shadow:0 0 15px rgba(0,0,0,0.4);
+}
+
+.project-card:hover{
+transform:translateY(-10px);
+border-color:#444;
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* PROJECT IMAGE */
+
+.project-image{
+width:100%;
+height:180px;
+background:#2a2a2a;
+border-radius:12px;
+margin-bottom:20px;
+overflow:hidden;
+}
+
+.project-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* PROJECT TEXT */
+
+.project-name{
+font-size:24px;
+margin-bottom:10px;
+}
+
+.project-text{
+color:#a0a0a0;
+font-size:15px;
+line-height:1.6;
+margin-bottom:20px;
+}
+
+/* PROJECT BUTTON */
+
+.project-button{
+display:inline-block;
+padding:10px 18px;
+border:1px solid #fafafa;
+border-radius:8px;
+text-decoration:none;
+color:#fafafa;
+font-size:14px;
+transition:0.3s;
+}
+
+.project-button:hover{
+background:#fafafa;
+color:#000000;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-section{
+padding:100px 10%;
+}
+
+.contact-container{
+display:flex;
+justify-content:space-between;
+gap:80px;
+flex-wrap:wrap;
+}
+
+.contact-form-area{
+flex:1;
+max-width:500px;
+}
+
+.contact-heading{
+font-size:48px;
+margin-bottom:30px;
+}
+
+.contact-form-area label{
+display:block;
+margin-top:20px;
+margin-bottom:8px;
+}
+
+.contact-form-area input,
+.contact-form-area textarea{
+width:100%;
+padding:14px;
+background:#0d0d0d;
+border:1px solid #222;
+border-radius:10px;
+color:#fafafa;
+}
+
+.contact-form-area textarea{
+height:120px;
+resize:none;
+}
+
+.contact-form-area button{
+margin-top:25px;
+width:100%;
+padding:14px;
+background:#fafafa;
+color:#000;
+border:none;
+border-radius:10px;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+.contact-form-area button:hover{
+background:#dcdcdc;
+}
+
+/* PROFILE CARD */
+
+.contact-profile{
+flex:1;
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+}
+
+.profile-card{
+width:220px;
+height:260px;
+border:1px solid #777;
+border-radius:12px;
+overflow:hidden;
+margin-bottom:20px;
+}
+
+.profile-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.contact-text{
+color:#aaa;
+font-size:18px;
+max-width:260px;
+line-height:1.6;
+margin-bottom:20px;
+}
+
+/* SOCIAL ICONS */
+
+.social-icons{
+display:flex;
+gap:20px;
+}
+
+.social-icons a{
+color:#fafafa;
+font-size:22px;
+transition:0.3s;
+}
+
+.social-icons a:hover{
+color:#9a9a9a;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+text-align:center;
+padding:30px;
+}
+
+.footer-text{
+color:#7a7a7a;
+}
+
+/* ================= SCROLLBAR ================= */
+
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+background:#2a2a2a;
+border-radius:10px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+.hero-section{
+flex-direction:column;
+text-align:center;
+}
+
+.hand-image{
+max-width:300px;
+margin-top:20px;
+}
+
+.welcome-text{
+font-size:32px;
+}
+
+.about-container{
+flex-direction:column;
+text-align:center;
+}
+
+.about-title{
+font-size:40px;
+}
+
+.projects-container{
+flex-direction:column;
+align-items:center;
+}
+
+.contact-container{
+flex-direction:column;
+align-items:center;
+text-align:center;
+}
+
+}
+
+

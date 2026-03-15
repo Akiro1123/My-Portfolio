@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Portfolio</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
+
+<style>
+
+/* SUCCESS POPUP */
+
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
+
+.popup-content{
+background:#121212;
+padding:40px;
+border-radius:12px;
+text-align:center;
+width:320px;
+color:white;
+}
+
+.popup-content button{
+margin-top:20px;
+padding:10px 20px;
+border:none;
+background:#fafafa;
+color:#000;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* SIDEBAR */
+
+#sidebar{
+position:fixed;
+top:0;
+right:0;
+width:250px;
+height:100%;
+background:#000;
+transform:translateX(100%);
+transition:0.4s;
+z-index:1000;
+padding-top:80px;
+}
+
+#sidebar.active{
+transform:translateX(0);
+}
+
+#sidebar ul{
+list-style:none;
+padding:0;
+text-align:center;
+}
+
+#sidebar li{
+padding:15px;
+}
+
+#sidebar a{
+color:white;
+text-decoration:none;
+font-size:18px;
+}
+
+/* MENU BUTTON */
+
+.menu-button{
+position:absolute;
+top:20px;
+right:20px;
+background:none;
+border:none;
+cursor:pointer;
+z-index:1100;
+}
+
+.menu-icon{
+width:30px;
+}
+
+/* HEADER */
+
+.header{
+padding:40px 20px;
+text-align:center;
+position:relative;
+}
+
+.header-title{
+font-size:4rem;
+}
+
+.header-description{
+color:#aaa;
+}
+
+/* HERO */
+
+.hero-section{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:80px 10%;
+gap:40px;
+max-width:1400px;
+margin:auto;
+}
+
+.welcome-text{
+font-size:50px;
+font-weight:bold;
+}
+
+@media (min-width:2000px){
+
+.hero-section{
+display:flex;
+max-width:1500px;
+margin:auto;
+}
+
+.hand-image{
+max-width:600px;
+object-fit: cover;
+height: auto;
+margin-left: 600px;
+}
+
+}
+
+
+
+/* ABOUT */
+
+.about-section{
+padding:80px 10%;
+}
+
+.about-container{
+display:flex;
+align-items:center;
+gap:60px;
+}
+
+.about-image img{
+width:220px;
+height:220px;
+object-fit:cover;
+border-radius:15px;
+border:2px solid #fafafa;
+}
+
+.about-title{
+font-size:60px;
+margin-bottom:20px;
+}
+
+.about-text{
+font-size:18px;
+line-height:1.8;
+color:#bfbfbf;
+}
+
+/* PROJECTS */
+
+.projects-section{
+padding:80px 10%;
+}
+
+.projects-container{
+display:flex;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.project-card{
+background:#121212;
+padding:20px;
+border-radius:12px;
+flex:1;
+min-width:300px;
+}
+
+.project-image img{
+width:100%;
+border-radius:10px;
+}
+
+.project-button{
+display:inline-block;
+margin-top:10px;
+padding:10px 18px;
+background:#fafafa;
+color:#000;
+border-radius:6px;
+text-decoration:none;
+}
+
+/* CONTACT */
+
+.contact-section{
+padding:100px 10%;
+}
+
+.contact-container{
+display:flex;
+justify-content:space-between;
+gap:80px;
+flex-wrap:wrap;
+}
+
+.contact-form-area{
+flex:1;
+max-width:500px;
+}
+
+.contact-heading{
+font-size:48px;
+margin-bottom:30px;
+}
+
+.contact-form-area input,
+.contact-form-area textarea{
+width:100%;
+padding:14px;
+background:#0d0d0d;
+border:1px solid #222;
+border-radius:10px;
+color:white;
+margin-bottom:15px;
+}
+
+.contact-form-area button{
+margin-top:10px;
+width:100%;
+padding:14px;
+background:#e5e5e5;
+border:none;
+border-radius:10px;
+font-weight:600;
+cursor:pointer;
+}
+
+.contact-profile{
+flex:1;
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+}
+
+.profile-card{
+width:220px;
+height:260px;
+border:1px solid #777;
+border-radius:12px;
+overflow:hidden;
+margin-bottom:20px;
+}
+
+.profile-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.social-icons{
+display:flex;
+gap:20px;
+}
+
+.social-icons a{
+color:white;
+font-size:22px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero-section{
+flex-direction:column;
+text-align:center;
+}
+
+.hand-image{
+max-width:700px;
+margin-left: 100px;
+}
+
+.about-container{
+flex-direction:column;
+text-align:center;
+}
+
+.contact-container{
+flex-direction:column;
+align-items:center;
+text-align:center;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="header">
+
+<h1 class="header-title">Web Developer Portfolio</h1>
+
+<p class="header-description">
+Crafting beautiful and functional websites that are clean and affordable.
+</p>
+
+<button class="menu-button" onclick="toggleMenu()">
+<img id="menu-icon" src="menu.jpg" class="menu-icon">
+</button>
+
+<nav id="sidebar">
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#about">About Me</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact Me</a></li>
+<li><a href="dashboard.html">Dashboard</a></li>
+</ul>
+
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero-section">
+
+<p class="welcome-text">Welcome to my portfolio</p>
+
+<img src="hand.jpg" class="hand-image">
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="about-section">
+
+<div class="about-container">
+
+<div class="about-image">
+<img src="Me.jpg">
+</div>
+
+<div>
+
+<h2 class="about-title">About Me</h2>
+
+<p class="about-text">
+Hi! I'm James Justhin, a BSIT student and aspiring web developer who enjoys building simple, clean, and responsive websites. I'm passionate about learning new technologies and creating digital solutions that are both functional and user-friendly.
+</p>
+
+<p class="about-text">
+I enjoy coding, designing, and turning ideas into real projects. My goal is to grow as a developer, gain experience in the tech industry, and continue building meaningful applications.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects" class="projects-section">
+
+<h2 class="projects-title">Projects</h2>
+
+<div class="projects-container">
+
+<div class="project-card">
+
+<div class="project-image">
+<img src="PUPet.png">
+</div>
+
+<h3>Project 1</h3>
+
+<p>PUPet – Gamified Task Management Application</p>
+
+<a href="project1.html" class="project-button">View Project</a>
+
+</div>
+
+<div class="project-card">
+
+<div class="project-image">
+<img src="lib.png">
+</div>
+
+<h3>Project 2</h3>
+
+<p>Add your project description here.</p>
+
+<a href="prodject2.html" class="project-button">View Project</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact-section">
+
+<div class="contact-container">
+
+<div class="contact-form-area">
+
+<h2 class="contact-heading">Get In Touch</h2>
+
+<form id="contact-form"
+action="https://formsubmit.co/a2d9b669020ed18a0103a4908df7979c"
+method="POST"
+target="hidden_iframe"
+onsubmit="showPopup()">
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+
+<input type="text" name="name" placeholder="Your name" required>
+
+<input type="email" name="email" placeholder="your.email@example.com" required>
+
+<textarea name="message" placeholder="Your message here..." required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+</div>
+
+<div class="contact-profile">
+
+<div class="profile-card">
+<img src="Me.jpg">
+</div>
+
+<p class="contact-text">
+Let's work together to create something amazing!
+</p>
+
+<div class="social-icons">
+
+<a href="https://github.com/Akiro1123"><i class="fab fa-github"></i></a>
+<a href="https://www.linkedin.com/in/jamesjusthin-d-niegas-25a67637b/"><i class="fab fa-linkedin"></i></a>
+<a href="mailto:jamesjusthinbusinessmail@gmail.com"><i class="fas fa-envelope"></i></a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+<p class="footer-text">© 2026 James Justhin. All rights reserved.</p>
+</footer>
+
+<!-- POPUP -->
+
+<div id="success-popup" class="popup">
+
+<div class="popup-content">
+
+<h3>✅ Message Sent!</h3>
+<p>Thank you for contacting me.</p>
+
+<button onclick="closePopup()">Close</button>
+
+</div>
+
+</div>
+
+<script src="https://unpkg.com/scrollreveal"></script>
+<script>
+
+function toggleMenu(){
+
+const sidebar = document.getElementById("sidebar");
+const icon = document.getElementById("menu-icon");
+
+sidebar.classList.toggle("active");
+
+if(sidebar.classList.contains("active")){
+icon.src="back_icon.jpg";
+}else{
+icon.src="menu.jpg";
+}
+
+}
+
+function showPopup(){
+
+setTimeout(function(){
+
+document.getElementById("success-popup").style.display="flex";
+document.getElementById("contact-form").reset();
+
+},500);
+
+}
+
+function closePopup(){
+document.getElementById("success-popup").style.display="none";
+}
+
+ScrollReveal().reveal('.welcome-text',{
+distance:'60px',
+duration:1500,
+origin:'left',
+opacity:0,
+delay:200,
+reset:true
+});
+
+ScrollReveal().reveal('.hand-image',{
+distance:'60px',
+duration:1500,
+origin:'right',
+opacity:0,
+delay:400,
+reset:true
+});
+
+ScrollReveal().reveal('.about-image',{
+distance:'60px',
+duration:1500,
+origin:'left',
+delay:200,
+reset:true
+});
+
+ScrollReveal().reveal('.about-content',{
+distance:'60px',
+duration:1500,
+origin:'right',
+delay:300,
+reset: true
+});
+
+ScrollReveal().reveal('.project-card',{
+distance:'50px',
+duration:1200,
+origin:'bottom',
+interval:200,
+reset: true
+});
+
+ScrollReveal().reveal('.contact-form-area',{
+distance:'60px',
+duration:1400,
+origin:'left',
+reset: true
+});
+
+ScrollReveal().reveal('.contact-profile',{
+distance:'60px',
+duration:1400,
+origin:'right',
+reset: true
+});
+
+
+
+</script>
+
+</body>
+</html>
